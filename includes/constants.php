@@ -3,7 +3,7 @@
 /**
  * -----------------------------------------------------------------------------
  * Purpose: Namespaced constants for ClassicPress plugins.
- * Author: Code Potent
+ * Author: John Alarcon
  * Author URI: https://codepotent.com
  * -----------------------------------------------------------------------------
  * This is free software released under the terms of the General Public License,
@@ -11,14 +11,7 @@
  * implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. Full
  * text of the license is available at https://www.gnu.org/licenses/gpl-2.0.txt.
  * -----------------------------------------------------------------------------
- * Copyright 2020, Code Potent
- * -----------------------------------------------------------------------------
- *           ____          _      ____       _             _
- *          / ___|___   __| | ___|  _ \ ___ | |_ ___ _ __ | |_
- *         | |   / _ \ / _` |/ _ \ |_) / _ \| __/ _ \ '_ \| __|
- *         | |__| (_) | (_| |  __/  __/ (_) | ||  __/ | | | |_
- *          \____\___/ \__,_|\___|_|   \___/ \__\___|_| |_|\__|.com
- *
+ * Copyright 2021, John Alarcon (Code Potent)
  * -----------------------------------------------------------------------------
  */
 
@@ -40,10 +33,16 @@ require_once(ABSPATH.'wp-admin/includes/plugin.php');
 
 // Ex: codepotent
 const VENDOR_PREFIX = 'codepotent';
+// Ex: Our company is cool!
+define(__NAMESPACE__.'\VENDOR_TAGLINE', esc_html__('', 'codepotent-shortcodes-everywhere'));
 // Ex: plugin-folder-name
 const PLUGIN_SHORT_SLUG = 'shortcodes-everywhere';
+// Ex: dashicons-whatever
+const PLUGIN_MENU_ICON = null;
+// Ex: 23
+const PLUGIN_MENU_POS = null;
 // Ex: Admin Menu Text
-define(__NAMESPACE__.'\PLUGIN_MENU_TEXT', esc_html__('Shortcodes', 'codepotent-php-error-log-viewer'));
+const PLUGIN_MENU_TEXT = null;
 // Ex: plugin_folder_name
 define(__NAMESPACE__.'\PLUGIN_PREFIX', VENDOR_PREFIX.'_'.str_replace('-', '_', PLUGIN_SHORT_SLUG));
 // Ex: codepotent-my-plugin-name
@@ -87,33 +86,41 @@ define(__NAMESPACE__.'\PATH_PLUGINS', untrailingslashit(plugin_dir_path(dirname(
 const PATH_SELF = PATH_PLUGINS.'/'.PLUGIN_SLUG;
 // Ex: /home/user/mysite/wp-content/plugins/my-plugin-name/classes
 const PATH_CLASSES = PATH_SELF.'/classes';
+// Ex: /home/user/mysite/wp-content/plugins/my-plugin-name/endpoints
+const PATH_ENDPOINTS = PATH_SELF.'/endpoints';
+// Ex: /home/user/mysite/wp-content/plugins/my-plugin-name/extensions
+const PATH_EXTENSIONS = PATH_SELF.'/extensions';
+// Ex: /home/user/mysite/wp-content/plugins/my-plugin-name/fonts
+const PATH_FONTS = PATH_SELF.'/fonts';
+// Ex: /home/user/mysite/wp-content/plugins/my-plugin-name/images
+const PATH_IMAGES = PATH_SELF.'/images';
 // Ex: /home/user/mysite/wp-content/plugins/my-plugin-name/includes
 const PATH_INCLUDES = PATH_SELF.'/includes';
+// Ex: /home/user/mysite/wp-content/plugins/my-plugin-name/languages
+const PATH_LANGUAGES = PATH_SELF.'/languages';
+// Ex: /home/user/mysite/wp-content/plugins/my-plugin-name/scripts
+const PATH_SCRIPTS = PATH_SELF.'/scripts';
+// Ex: /home/user/mysite/wp-content/plugins/my-plugin-name/styles
+const PATH_STYLES = PATH_SELF.'/styles';
+// Ex: /home/user/mysite/wp-content/plugins/my-plugin-name/templates
+const PATH_TEMPLATES = PATH_SELF.'/templates';
+// Ex: https://mysite.com
+define(__NAMESPACE__.'\URL_HOME', untrailingslashit(home_url()));
+// Ex: https://mysite.com/wp-admin
+const URL_ADMIN = URL_HOME.'/wp-admin';
 // Ex: https://mysite.com/wp-content/plugins
 define(__NAMESPACE__.'\URL_PLUGINS', plugins_url());
 // Ex: https://mysite.com/wp-content/plugins/my-plugin-name
 const URL_SELF = URL_PLUGINS.'/'.PLUGIN_SLUG;
+// Ex: https://mysite.com/wp-content/plugins/my-plugin-name/endpoints
+const URL_ENDPOINTS = URL_SELF.'/endpoints';
+// Ex: https://mysite.com/wp-content/plugins/my-plugin-name/extensions
+const URL_EXTENSIONS = URL_SELF.'/extensions';
+// Ex: https://mysite.com/wp-content/plugins/my-plugin-name/fonts
+const URL_FONTS = URL_SELF.'/fonts';
 // Ex: https://mysite.com/wp-content/plugins/my-plugin-name/images
 const URL_IMAGES = URL_SELF.'/images';
+// Ex: https://mysite.com/wp-content/plugins/my-plugin-name/scripts
+const URL_SCRIPTS = URL_SELF.'/scripts';
 // Ex: https://mysite.com/wp-content/plugins/my-plugin-name/styles
 const URL_STYLES = URL_SELF.'/styles';
-
-// -----------------------------------------------------------------------------
-// Branding
-// -----------------------------------------------------------------------------
-
-define(__NAMESPACE__.'\VENDOR_TAGLINE', esc_html__('Code Potent is a leading provider of trusted ClassicPress solutions.', 'codepotent-update-manager'));
-const VENDOR_HOME_URL        = 'https://codepotent.com';
-const VENDOR_PLUGIN_URL      = 'https://codepotent.com/classicpress/plugins/'.PLUGIN_SHORT_SLUG;
-const VENDOR_DOCS_URL        = VENDOR_PLUGIN_URL.'/#docs';
-const VENDOR_FORUM_URL       = 'https://forums.classicpress.net/c/plugins/plugin-support/67';
-const VENDOR_REVIEWS_URL     = VENDOR_PLUGIN_URL.'/#comments';
-const VENDOR_REPO_URL        = 'https://github.com/'.VENDOR_PREFIX.'/'.PLUGIN_SHORT_SLUG.'/';
-const VENDOR_BLUE            = '337dc1';
-const VENDOR_ORANGE          = 'ff6635';
-const VENDOR_WORDMARK_URL    = URL_IMAGES.'/code-potent-logotype-wordmark.svg';
-const VENDOR_WORDMARK_IMG    = '<img src="'.VENDOR_WORDMARK_URL.'" alt="'.VENDOR_TAGLINE.'" style="max-width:100%;">';
-const VENDOR_WORDMARK_LINK   = '<a href="'.VENDOR_HOME_URL.'" title="'.VENDOR_TAGLINE.'">'.VENDOR_WORDMARK_IMG.'</a>';
-const VENDOR_LETTERMARK_URL  = URL_IMAGES.'/codepotent-logotype-lettermark.svg';
-const VENDOR_LETTERMARK_IMG  = '<img src="'.VENDOR_LETTERMARK_URL.'" alt="'.VENDOR_TAGLINE.'" style="height:1.2em;vertical-align:middle;">';
-const VENDOR_LETTERMARK_LINK = '<a href="'.VENDOR_HOME_URL.'" title="'.VENDOR_TAGLINE.'">'.VENDOR_LETTERMARK_IMG.'</a>';
