@@ -41,8 +41,6 @@ const PLUGIN_SHORT_SLUG = 'shortcodes-everywhere';
 const PLUGIN_MENU_ICON = null;
 // Ex: 23
 const PLUGIN_MENU_POS = null;
-// Ex: Admin Menu Text
-const PLUGIN_MENU_TEXT = null;
 // Ex: plugin_folder_name
 define(__NAMESPACE__.'\PLUGIN_PREFIX', VENDOR_PREFIX.'_'.str_replace('-', '_', PLUGIN_SHORT_SLUG));
 // Ex: codepotent-my-plugin-name
@@ -61,6 +59,8 @@ const PLUGIN_SETTINGS_VAR = PLUGIN_PREFIX.'_settings';
 $plugin = get_plugin_data(PLUGIN_FILEPATH, false, false);
 // Ex: My Plugin Name
 define(__NAMESPACE__.'\PLUGIN_NAME', $plugin['Name']);
+// Ex: Admin Menu Text
+define(__NAMESPACE__.'\PLUGIN_MENU_TEXT', $plugin['Name']);
 // Ex: Some plugin description
 define(__NAMESPACE__.'\PLUGIN_DESCRIPTION', $plugin['Description']);
 // Ex: 1.2.3
