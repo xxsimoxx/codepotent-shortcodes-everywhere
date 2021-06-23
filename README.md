@@ -9,6 +9,7 @@ Shortcodes Everywhere will help you quickly enable shortcodes in any context on 
 ## Enable or Disable Shortcodes
 
 If you need to _disable_ shortcodes from running in any given context, this plugin has got your back! Not only can you enable shortcodes to run in additional contexts, you can also _disable_ them from running in any of those contexts, too, giving you more control than ever.
+If shortcodes are present in a context where they are disabled, nothing will show up: they’re fully stripped.
 
 ## Quick Setup
 
