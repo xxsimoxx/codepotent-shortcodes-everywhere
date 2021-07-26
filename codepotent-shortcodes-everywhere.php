@@ -4,7 +4,7 @@
  * -----------------------------------------------------------------------------
  * Plugin Name: Shortcodes Everywhere
  * Description: Enable shortcodes in widgets, excerpts, taxonomy and archive descriptions, and comments.
- * Version: 1.1.0
+ * Version: 1.1.1
  * Author: Simone Fioravanti
  * Author URI: https://software.gieffeedizioni.it
  * Plugin URI: https://software.gieffeedizioni.it
@@ -117,7 +117,7 @@ class ShortcodeEnabler {
 		if ((empty($options['page']) && is_page()) ||
 			(empty($options['post']) && is_single())) {
 				add_filter('the_content', 'strip_shortcodes');
-			}
+		}
 
 		// Either add shortcode filter or strip shortcodes, for each context.
 		foreach (get_shortcode_context_hook_names(true) as $context=>$hook) {
