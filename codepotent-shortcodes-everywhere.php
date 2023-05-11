@@ -4,7 +4,7 @@
  * -----------------------------------------------------------------------------
  * Plugin Name: Shortcodes Everywhere
  * Description: Enable shortcodes in widgets, excerpts, taxonomy and archive descriptions, and comments.
- * Version: 1.1.2
+ * Version: 1.1.3
  * Requires CP: 1.0
  * Requires PHP: 5.6
  * Author: Simone Fioravanti
