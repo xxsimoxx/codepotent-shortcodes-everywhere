@@ -58,7 +58,7 @@ function get_shortcode_contexts() {
  *
  * @return array The requested contexts.
  */
-function get_shortcode_context_hook_names($custom_only=false) {
+function get_shortcode_context_hook_names($custom_only = false) {
 
 	// Core contexts where shortcodes can be processed.
 	$core_contexts = [

@@ -4,7 +4,7 @@
  * -----------------------------------------------------------------------------
  * Plugin Name: Shortcodes Everywhere
  * Description: Enable shortcodes in widgets, excerpts, taxonomy and archive descriptions, and comments.
- * Version: 1.1.3
+ * Version: 1.1.4
  * Requires CP: 1.0
  * Requires PHP: 5.6
  * Author: Simone Fioravanti
@@ -122,7 +122,7 @@ class ShortcodeEnabler {
 		}
 
 		// Either add shortcode filter or strip shortcodes, for each context.
-		foreach (get_shortcode_context_hook_names(true) as $context=>$hook) {
+		foreach (get_shortcode_context_hook_names(true) as $context => $hook) {
 			if (!empty($options[$context])) {
 				add_filter($hook, 'shortcode_unautop');
 				add_filter($hook, 'do_shortcode', 11);
@@ -241,7 +241,7 @@ class ShortcodeEnabler {
 		 * Since we may have retrieved previously-stored settings, let's just do
 		 * one last cleanse to ensure no unexpected values.
 		 */
-		foreach ($settings as $context=>$boolean) {
+		foreach ($settings as $context => $boolean) {
 			if ($boolean !== 1) {
 				$settings[$context] = 0;
 			}

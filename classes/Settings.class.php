@@ -120,14 +120,14 @@ class Settings {
 		$contexts = get_shortcode_contexts();
 
 		// Add a labelled field for each context.
-		foreach ($contexts as $context=>$text) {
+		foreach ($contexts as $context => $text) {
 			add_settings_field(
 				'enable_'.$context,
 				'<label for="'.PLUGIN_PREFIX.'_'.$context.'_enabled">'.$text.'</label>',
 				[$this, 'render_input_pair'],
 				PLUGIN_PREFIX.'_settings',
 				PLUGIN_PREFIX.'_enabled_contexts',
-				['context'=>$context]
+				['context' => $context]
 			);
 		}
 
@@ -160,14 +160,14 @@ class Settings {
 		// Enable.
 		$checked = !empty($this->options[$args['context']]) ? checked(1, 1, 0) : '';
 		echo '<label>';
-		echo '<input type="radio" id="'.PLUGIN_PREFIX.'_'.$args['context'].'_enabled" name="'.PLUGIN_PREFIX.'_settings['.$args['context'].']" value="1" '.$checked.'>';
+		echo '<input type="radio" id="'.esc_attr(PLUGIN_PREFIX).'_'.esc_attr($args['context']).'_enabled" name="'.esc_attr(PLUGIN_PREFIX).'_settings['.esc_attr($args['context']).']" value="1" '.esc_attr($checked).'>';
 		echo esc_html__('Enable', 'codepotent-shortcodes-everywhere');
 		echo '</label>';
 
 		// Disable.
 		$checked = !isset($this->options[$args['context']]) || empty($this->options[$args['context']]) ? checked(0, 0, 0) : '';
 		echo '<label>';
-		echo '<input type="radio" id="'.PLUGIN_PREFIX.'_'.$args['context'].'_disabled" name="'.PLUGIN_PREFIX.'_settings['.$args['context'].']" value="0" '.$checked.'>';
+		echo '<input type="radio" id="'.esc_attr(PLUGIN_PREFIX).'_'.esc_attr($args['context']).'_disabled" name="'.esc_attr(PLUGIN_PREFIX).'_settings['.esc_attr($args['context']).']" value="0" '.esc_attr($checked).'>';
 		echo esc_html__('Disable', 'codepotent-shortcodes-everywhere');
 		echo '</label>';
 
@@ -175,7 +175,7 @@ class Settings {
 		echo '</p>';
 
 		// Description; is escaped.
-		echo '<p class="description">'.get_shortcode_context_description($args['context']).'</p>';
+		echo '<p class="description">'.esc_html(get_shortcode_context_description($args['context'])).'</p>';
 
 	}
 
@@ -191,7 +191,7 @@ class Settings {
 	public function render_settings_page() {
 
 		// Container.
-		echo '<div id="'.PLUGIN_SLUG.'" class="wrap">';
+		echo '<div id="'.esc_attr(PLUGIN_SLUG).'" class="wrap">';
 
 		// Primary heading.
 		echo '<h1>'.esc_html__('Shortcode Settings', 'codepotent-shortcodes-everywhere').'</h1>';
@@ -212,7 +212,7 @@ class Settings {
 		echo '</form>';
 
 		// Container.
-		echo '</div><!-- #'.PLUGIN_SLUG.'.wrap -->';
+		echo '</div><!-- #'.esc_attr(PLUGIN_SLUG).'.wrap -->';
 
 	}
 
